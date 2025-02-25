@@ -99,7 +99,7 @@
 
     <div class="content">
       <div class="title m-b-md">
-        ShareHobbies
+        ShareHobbies!!!
       </div>
 
       <div class="links">
