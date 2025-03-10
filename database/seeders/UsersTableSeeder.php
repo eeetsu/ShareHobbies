@@ -1,9 +1,8 @@
 <?php
 
-// namespace Database\Seeders;
-
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+namespace Database\Seeders;
 use Illuminate\Database\Seeder;
+use App\Models\Users\User;
 
 class UsersTableSeeder extends Seeder
 {
@@ -18,7 +17,7 @@ class UsersTableSeeder extends Seeder
       [
           'username' => 'Atlas一郎',
           'name_kana' => 'アトラスイチロウ',
-          'mail' => 'atlas_ichi@com',
+          'mail_address' => 'atlas_ichi@com',
           'sex' => 2,
           'birth_day' => '1980-12-12',
           'role' => 1,
@@ -29,7 +28,7 @@ class UsersTableSeeder extends Seeder
       [
           'username' => 'Atlas二郎',
           'name_kana' => 'アトラスジロウ',
-          'mail' => 'atlas_ni@com',
+          'mail_address' => 'atlas_ni@com',
           'sex' => 2,
           'birth_day' => '1980-02-02',
           'role' => 1,
@@ -40,7 +39,7 @@ class UsersTableSeeder extends Seeder
       [
           'username' => 'Atlas三子',
           'name_kana' => 'アトラスサブコ',
-          'mail' => 'atlas_san@com',
+          'mail_address' => 'atlas_san@com',
           'sex' => 2,
           'birth_day' => '1980-03-03',
           'role' => 2,
