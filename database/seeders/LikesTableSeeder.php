@@ -2,8 +2,10 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class LikesTableSeeder extends Seeder
 {
@@ -14,6 +16,9 @@ class LikesTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('likes')->insert([
+            'like_user_id' => '1',
+            'like_post_id' => '1',
+        ]);
     }
 }

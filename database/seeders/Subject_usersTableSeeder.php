@@ -2,8 +2,10 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class Subject_usersTableSeeder extends Seeder
 {
@@ -14,6 +16,9 @@ class Subject_usersTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('subject_users')->insert([
+            'user_id' => '1',
+            'subject_id' => '1',
+        ]);
     }
 }
