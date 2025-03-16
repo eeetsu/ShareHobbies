@@ -39,5 +39,11 @@ class DatabaseSeeder extends Seeder
         $this->call([
             Subject_usersTableSeeder::class,
         ]);
+        $this->call([
+            AreasTableSeeder::class,
+        ]);
+        $this->call([
+            Area_usersTableSeeder::class,
+        ]);
     }
 }
