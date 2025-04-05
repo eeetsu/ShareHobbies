@@ -45,5 +45,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             Area_usersTableSeeder::class,
         ]);
+        $this->call([
+            Post_commentsTableSeeder::class,
+        ]);
     }
 }
