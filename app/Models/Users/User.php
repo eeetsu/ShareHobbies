@@ -2,10 +2,25 @@
 
 namespace App\Models\Users;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Posts\Post;
+use App\Models\Users\Area;
 
 class User extends Model
 {
-    use HasFactory;
+    protected $fillable = [
+        'username','bio','areadetail',
+    ];
+
+    // リレーション_1対多__user対posts_userの1から見た記述
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
+
+    //  リレーション_多対多__user対areaの多areaから見た記述
+    public function areas()
+    {
+         return $this->belongsToMany('App\Models\Users\Area', 'area_users', 'user_id','area_id' );
+    }
 }

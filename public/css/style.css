@@ -1,0 +1,424 @@
+@charset "UTF-8";
+
+/* 共通パーツ */
+html {
+  font-size: 16px;
+  /* font-size:文字サイズ */
+}
+
+body {
+  color: #624649;
+  /* color:文字色 */
+  font-size: 1rem;
+  font-family: "YuGothic", Yu Gothic, sans-serif;
+  /* font-family:文字のスタイル */
+}
+
+ul,
+li,
+ol {
+  list-style-type: none;
+  /* list-style-type:リスト要素の際に出てくる「・」など */
+}
+
+a {
+  text-decoration: none;
+  /* text-decoration:テキストのデコレーション（下線とか） */
+  transition: 0.6s;
+  /* transition:cssが反映される時間（ゆっくり色を変えるなどに使用）; */
+}
+
+a:hover {
+  transition: 0.6s;
+}
+
+.container {
+  max-width: 1024px;
+  /* max-width:最大横幅 */
+  width: 90%;
+  /* width:横幅 */
+  margin: 0 auto;
+}
+
+h1 {
+  font-family: 'Prata', cursive;
+  font-size: 4rem;
+  letter-spacing: 10px;
+  /* letter-spacing:文字間 */
+  color: #fff;
+  font-weight: normal;
+  /* font-weight:文字の太さ */
+  text-shadow: 0px 0px 2px #fff;
+  /* text-shadow:文字の影 */
+  filter: drop-shadow(2px 1px 2px #fff);
+  /* filter:ぼかしや色変化など */
+}
+
+/* section{
+  padding-top: 80px;
+  padding-bottom: 80px;
+} */
+
+#concept,
+ {
+  padding: 80px 0;
+  /* ① */
+}
+
+h2 {
+  font-size: 3rem;
+  margin-bottom: -5px;
+  font-family: 'Prata', cursive;
+  font-weight: normal;
+  letter-spacing: 4px;
+  color: #f63001;
+}
+
+.ja-title {
+  font-size: 1rem;
+  color: #f63001;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.about-text {
+  font-size: 1rem;
+  letter-spacing: 0.8px;
+}
+
+.box-design {
+  background-color: #fff;
+}
+
+
+
+select {
+  -moz-appearance: menulist;
+  /* ① */
+  -webkit-appearance: menulist;
+  /* ① */
+  border-style: solid;
+  /* ② */
+  height: 28px;
+  /* ③ */
+}
+
+select::-ms-expand {
+  display: block;
+  /* ④ */
+}
+
+
+/*** グローバルナビゲーション ***/
+.g-navi {
+  position: absolute;
+  /* position:要素の配置方法 */
+  background-color: #000;
+  /* background-color:背景色 */
+  width: 100%;
+
+  /* display: flex; */
+  */ margin: 1rem 0em;
+  font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  /* background: #FFFFFF; */
+  font-weight: normal;
+  border: 1px solid rgba(34, 36, 38, 0.15);
+  box-shadow: 0px 1px 2px 0 rgba(34, 36, 38, 0.15);
+  border-radius: 0.28571429rem;
+  min-height: 2.85714286em;
+  padding: 5px;
+}
+
+.ui.white {
+  background: #ffffff;
+  color: rgba(0, 0, 0, 0.6);
+  font-weight: normal;
+  border-radius: 0.28571429rem;
+  text-transform: none;
+  text-shadow:;
+  box-shadow: 0px 0px 0px 1px rgba(34, 36, 38, 0.15) inset;
+}
+
+.g-nave ul{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+  padding: 5px;
+}
+
+.ui.input {
+  position: relative;
+  font-weight: normal;
+  font-style: normal;
+  display: inline-flex;
+  color: rgba(0, 0, 0, 0.87);
+  padding: 0.78571429em 1.5em 0.78571429em;
+  background: #ffff;
+  border-radius: 0.28571429rem;
+}
+
+
+.g-navi ul {
+  display: flex;
+  /* display:要素の表示方法 */
+  flex-wrap: nowrap;
+  /* flex-wrap:flex要素の折り返し */
+  justify-content: space-around;
+  /* justify-content:flex要素の横位置設定 */
+  align-items: center;
+  /* align-items:flex要素の縦位置設定 */
+}
+
+.g-navi ul li {
+  flex-basis: 16.6%;
+  /* flex-basis:flex子要素の横幅 */
+  text-align: center;
+}
+
+
+
+/* .g-navi ul li a {
+  display: block;
+  color: #fff;
+  padding: 20px 0;
+  padding:内側の余白設定
+} */
+
+/* 「メニューテキスト」にマウスオンした際のデザイン
+.g-navi ul li a:hover {
+  color: #fff;
+  background-color: #000;
+  opacity: 0.3;
+  opacity:透過度
+}
+ */
+
+/* メインビジュアル */
+#main-visual {
+  background-image: url(../image/mv.png);
+  /* background-image:背景画像 */
+  background-repeat: no-repeat;
+  /* background-repeat:背景の繰り返し */
+  background-size: cover;
+  height: 100vh;
+  max-height: 700px;
+  /* max-height:最大縦幅 */
+}
+
+#profile-main-visual {
+  background-image: url(../image/mv.png);
+  /* background-image:背景画像 */
+  background-repeat: no-repeat;
+  /* background-repeat:背景の繰り返し */
+  background-size: cover;
+  height: 100vh;
+  max-height: 300px;
+  /* max-height:最大縦幅 */
+}
+
+.mv-wrapper {
+  position: relative;
+}
+
+.mv-right {
+  position: absolute;
+  top: 240px;
+  /* top:上部からの配置位置 */
+  right: 0;
+  /* right:右側からの配置位置 */
+  max-width: 100%;
+}
+
+.text {
+  font-family: 'Prata', cursive;
+  font-size: 1.625rem;
+  letter-spacing: 4px;
+  color: #fff;
+  filter: drop-shadow(1px 1px 1px #fff);
+  text-shadow: 0px 0px 1px #fff;
+  text-align: center;
+  /* text-align:テキストの位置設定 */
+  margin-bottom: 80px;
+  /* margin:外側の余白設定 */
+}
+
+.purchase-button {
+  text-align: center;
+}
+
+.purchase-button a {
+  display: inline-block;
+  background-color: #f63001;
+  color: #fff;
+  padding: 15px 50px;
+  font-size: 1.375rem;
+  /* 22px */
+}
+
+.purchase-button a:hover {
+  background-color: #fff;
+  color: #f63001;
+}
+
+
+/* コンセプトエリア */
+#concept {
+  background-color: #fff;
+  background-repeat: no-repeat;
+
+  border-radius: 0.28571429rem;
+  text-align: center;
+}
+
+
+
+/* フッターエリア */
+footer {
+  background: #3a3532;
+  color: #fff;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.footer-content a {
+  color: #fff;
+}
+
+.footer-content a:hover {
+  color: #624649;
+}
+
+.logo-wrapper {
+  flex-grow: 2;
+}
+
+.menu {
+  flex-grow: 1;
+}
+
+/* ロゴ */
+.logo {
+  display: block;
+  font-size: 3rem;
+  font-family: 'Prata', cursive;
+  letter-spacing: 6px;
+  margin-bottom: 10px;
+}
+
+.sns-block {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.mark {
+  margin-right: 1rem;
+}
+
+.mark img {
+  width: 30px;
+}
+
+.menu ul li {
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+footer small {
+  padding-bottom: 20px;
+  display: block;
+  text-align: center;
+}
+
+
+/* top　user一覧表示 */
+.user{
+  border: 1px solid #ccc;
+  padding: 16px;
+  background-color: #f9f9f9;
+  text-align: left;
+}
+/* style.css 一番下の行 */
+@media screen and (max-width:768px) {
+
+  /* 共通パーツ */
+  section {
+    overflow-x: hidden;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    letter-spacing: 3px;
+    text-align: center;
+  }
+
+  #concept,
+  #feature,
+  #thought,
+  #cakelife,
+  #lineup,
+  #package,
+  #store,
+  #contact {
+    padding: 60px 0;
+  }
+
+
+  /* ヘッダーエリア */
+  .g-navi {
+    display: none;
+  }
+
+  .g-navi-sp {
+    background-color: #f6e2c0;
+    background-repeat: no-repeat;
+  }
+
+
+
+  /* メインビジュアル */
+  #main-visual {
+    background-image: url(../image/sp/mv.png);
+    height: 330px;
+    max-height: inherit;
+  }
+
+  .mv-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  .mv-right {
+    position: relative;
+    top: 0;
+    right: 0;
+  }
+
+  .text {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+  }
+
+  /* コンセプトエリア */
+  #concept {
+    background-size: 45%;
+  }
+
+
+
+}
+
+/* ここまで768px以下の範囲 */

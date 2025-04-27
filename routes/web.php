@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostsController;
+use App\Http\Controllers\UsersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +18,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+
+// ログアウト中のページ_誰でも見れるページ
+Route::get('/top', [PostsController::class, 'index'])->name('top');
+
+Route::get('/profile', [UsersController::class, 'profile'])->name('profole');
+
+
+
