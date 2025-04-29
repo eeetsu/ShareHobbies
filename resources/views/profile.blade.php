@@ -22,29 +22,24 @@
 
   <header>
     <!-- グローバルナビゲーション -->
-     <nav class="g-navi">
+      <nav class="g-navi">
           <form action="{{ route('top') }}" method="get" id="userSearchRequest">
-
               <ul>
-                <li>
-                  <a href="/top" class="ui button">戻る</a></li>
-
-
-
+                <li><a href="/top" class="ui button">戻る</a></li>
                 <li><a href="URL〇〇" class="ui button">活動登録</a></li>
               </ul>
           </form>
-
-    </nav>
+      </nav>
     <!-- ヘッダーエリアの要素が入ります -->
     <section id="profile-main-visual">
       <!-- メインビジュアルの要素が入ります -->
       <div class="container mv-wrapper"></div>
     </section>
     <!-- コンセプトエリアの要素が入ります -->
+  <section id="concept">
     <div class="container">
-
       <div class="user">
+            <img src="{{ asset('storage/images/' . $users->first()->images) }}" alt="" width="100" height="100" style="border-radius: 10%">
             <p>ユーザー名：{{ $users->first()->username }}</p>
 
             <p>エリア：{{ $areas->first()->area }}</p>
@@ -56,14 +51,7 @@
             @foreach($posts as $post)
             <p>{{ $post->post }}</p>
             @endforeach
-
-          </div>
-
-    </div>
-
-      <!-- 共通エリアタイトル -->
-      <div class="title">
-
+      </div>
     </div>
   </section>
 
@@ -92,11 +80,6 @@
         <div class="menu">
           <ul>
             <li><a href="#concept">CONCEPT</a></li>
-            <li><a href="#feature">FEATURE</a></li>
-            <li><a href="#thought">THOUGHT</a></li>
-            <li><a href="#lineup">LINE UP</a></li>
-            <li><a href="#store">STORE</a></li>
-            <li><a href="#contact">CONTACT</a></li>
           </ul>
         </div>
         <!-- 利用規約ボックス -->

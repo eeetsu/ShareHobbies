@@ -22,18 +22,11 @@
 
   <header>
     <!-- ヘッダーエリアの要素が入ります -->
-    <section id="main-visual">
-      <!-- メインビジュアルの要素が入ります -->
-      <div class="container mv-wrapper"></div>
-    </section>
-      <nav class="g-navi">
-
-          <!-- グローバルナビゲーション -->
-          <form action="{{ route('top') }}" method="get" id="userSearchRequest">
-
-              <ul>
-                <li>
-                  <input type="text" class="ui inverted input" name="keyword" placeholder="キーワードを検索" form="userSearchRequest"></li>
+    <!-- グローバルナビゲーション -->
+          <nav class="g-navi">
+              <form action="{{ route('top') }}" method="get" id="userSearchRequest">
+                <ul>
+                  <li><input type="text" class="ui inverted input" name="keyword" placeholder="キーワードを検索" form="userSearchRequest"></li>
 
                   <li class="ui.white">
                     <select name="category" form="userSearchRequest" class="ui basic floating dropdown button">
@@ -54,33 +47,37 @@
                       @endforeach
                     </select>
                   </li>
+                  <li><input type="submit" class="ui button" name="search_btn" value="　　　　　　検索　　　　　　" form="userSearchRequest"></li>
+                  <li><input type="reset" class="ui button" value="　　　　　リセット　　　　　" onclick="this.form.reset()" form="userSearchRequest"></li>
+                </ul>
+              </form>
+          </nav>
+          <!-- SPのグローバルナビゲーション -->
+          <nav class="g-navi-sp">
+            <div class="sp-logo">
+              <p class="logo-title"></p>
+            </div>
+            <!-- ハンバーガーメニュー  -->
+            <div class="menu-trigger">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </nav>
 
+    <!-- メインビジュアルの要素が入ります -->
+      <section id="main-visual">
+        <div class="container mv-wrapper"></div>
+      </section>
 
-                <li><input type="submit" class="ui button" name="search_btn" value="　　　　　　検索　　　　　　" form="userSearchRequest"></li>
-                <li><input type="reset" class="ui button" value="　　　　　リセット　　　　　" onclick="this.form.reset()" form="userSearchRequest"></li>
-              </ul>
-          </form>
-
-    </nav>
-    <!-- SPのグローバルナビゲーション -->
-    <nav class="g-navi-sp">
-      <div class="sp-logo">
-        <p class="logo-title"></p>
-      </div>
-      <!-- ハンバーガーメニュー  -->
-      <div class="menu-trigger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </nav>
   </header>
+  <!-- コンセプトエリアの要素が入ります -->
   <section id="concept">
-    <!-- コンセプトエリアの要素が入ります -->
     <div class="container">
       @if($users->count())
         @foreach ($users as $user)
           <div class="user">
+            <img src="{{ asset('storage/images/' . $user->images) }}" alt="" width="100" height="100" style="border-radius: 10%">
             <p>ユーザー名：{{ $user->username }}</p>
             @foreach ($user->areas as $area)
             <p>エリア：{{ $area->area }}</p>
@@ -94,23 +91,17 @@
             <p>コメント：{{ $post->post }}</p>
             @endforeach
 
+            <div class="post-item">
+            <a href="{{ route('profile', ['user_id' => $user->id]) }}" class="ui button" enctype="multipart/form-data">
+              <p>詳細</p>
+            </a>
+            </div>
           </div>
         @endforeach
 
         @else
          <p>該当するユーザーが見つかりませんでした。</p>
       @endif
-
-    </div>
-
-
-
-
-
-
-
-      <!-- 共通エリアタイトル -->
-      <div class="title">
 
     </div>
   </section>
@@ -140,11 +131,6 @@
         <div class="menu">
           <ul>
             <li><a href="#concept">CONCEPT</a></li>
-            <li><a href="#feature">FEATURE</a></li>
-            <li><a href="#thought">THOUGHT</a></li>
-            <li><a href="#lineup">LINE UP</a></li>
-            <li><a href="#store">STORE</a></li>
-            <li><a href="#contact">CONTACT</a></li>
           </ul>
         </div>
         <!-- 利用規約ボックス -->

@@ -24,7 +24,6 @@ Route::get('/', function () {
 // ログアウト中のページ_誰でも見れるページ
 Route::get('/top', [PostsController::class, 'index'])->name('top');
 
-Route::get('/profile', [UsersController::class, 'profile'])->name('profole');
+Route::get('/profile', [UsersController::class, 'profile'])->name('profile');
 
-
-
+Route::get('/profile/{user_id}', [UsersController::class, 'profile'])->name('profile');

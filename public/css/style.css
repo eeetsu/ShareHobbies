@@ -267,6 +267,7 @@ select::-ms-expand {
 
 /* コンセプトエリア */
 #concept {
+  padding: 30px;
   background-color: #fff;
   background-repeat: no-repeat;
 
