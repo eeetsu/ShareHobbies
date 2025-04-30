@@ -31,7 +31,7 @@
           </form>
       </nav>
     <!-- ヘッダーエリアの要素が入ります -->
-    <section id="profile-main-visual">
+    <section id="profile-main-visual" style="background-image: url({{ asset('storage/images/' . $users->first()->images) }})">
       <!-- メインビジュアルの要素が入ります -->
       <div class="container mv-wrapper"></div>
     </section>
@@ -42,7 +42,7 @@
             <img src="{{ asset('storage/images/' . $users->first()->images) }}" alt="" width="100" height="100" style="border-radius: 10%">
             <p>ユーザー名：{{ $users->first()->username }}</p>
 
-            <p>エリア：{{ $areas->first()->area }}</p>
+            <p>エリア：{{ $subjects->first()->subject }}</p>
 
             <p>エリア詳細：{{ $users->first()->areadetail }}</p>
             <p>自己紹介文：{{ $users->first()->bio }}</p>

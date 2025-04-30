@@ -5,6 +5,7 @@ namespace App\Models\Users;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Posts\Post;
 use App\Models\Users\Area;
+use App\Models\Users\Subject;
 
 class User extends Model
 {
@@ -22,5 +23,10 @@ class User extends Model
     public function areas()
     {
          return $this->belongsToMany('App\Models\Users\Area', 'area_users', 'user_id','area_id' );
+    }
+
+    public function subjects()
+    {
+        return $this->belongsToMany('App\Models\Users\Subject', 'subject_users', 'user_id','subject_id' );
     }
 }

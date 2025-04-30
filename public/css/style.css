@@ -210,7 +210,6 @@ select::-ms-expand {
 }
 
 #profile-main-visual {
-  background-image: url(../image/mv.png);
   /* background-image:背景画像 */
   background-repeat: no-repeat;
   /* background-repeat:背景の繰り返し */
