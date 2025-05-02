@@ -2,15 +2,22 @@
 
 namespace App\Models\Users;
 
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Posts\Post;
 use App\Models\Users\Area;
 use App\Models\Users\Subject;
 
-class User extends Model
+
+
+class User extends Authenticatable
 {
+    use Notifiable;
+
     protected $fillable = [
-        'username','bio','areadetail',
+        'username','bio','areadetail','mail_address','password','images',
     ];
 
     // リレーション_1対多__user対posts_userの1から見た記述

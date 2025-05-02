@@ -24,9 +24,8 @@
       <!-- ヘッダーエリアの要素が入ります -->
       <!-- グローバルナビゲーション -->
             <nav class="g-navi">
-                <form action="{{ route('top') }}" method="get" id="userSearchRequest">
+                <form action="{{ route('login_top') }}" method="get" id="userSearchRequest">
                   <ul>
-                    <li><a href="{{ route('login') }}" class="ui button">ログイン</a></li>
                     <li><input type="text" class="ui inverted input" name="keyword" placeholder="キーワードを検索" form="userSearchRequest"></li>
 
                     <li>
@@ -42,8 +41,11 @@
                         @endforeach
                       </select>
                     </li>
-                    <li><input type="submit" class="ui button" name="search_btn" value="　　　　　　検索　　　　　　" form="userSearchRequest"></li>
-                    <li><input type="reset" class="ui button" value="　　　　　リセット　　　　　" onclick="window.location.href='{{ route('top') }}'"></li>
+                    <li><input type="submit" class="ui button" name="search_btn" value="　　　　　　検索　　　　　　" form="userSearchRequest" onclick="window.location.href='{{ route('login_top') }}'"></li>
+                    <li><input type="reset" class="ui button" value="　　　　　リセット　　　　　" onclick="window.location.href='{{ route('login_top') }}'"></li>
+                    <li><a href="/login_profile" class="ui button">プロフィールへ</a></li>
+                    <li><a href="{{ route('update_profile') }}" class="ui button">プロフィール編集</a></li>
+                    <li><a href="/logout" class="ui button">ログアウト</a></li>
                   </ul>
                 </form>
             </nav>
