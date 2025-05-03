@@ -29,6 +29,21 @@ class UsersController extends Controller
     ]);
     }
 
+    public function profiles($user_id)
+    {
+         $user = User::with(['areas', 'posts', 'subjects'])->findOrFail($user_id);
+         $posts = $user->posts;
+         $areas = $user->areas;
+         $subjects = $user->subjects;
+
+    return view('profiles', [
+        'users' => collect([$user]), // profile.blade.php が複数形前提なので wrap する
+        'posts' => $posts,
+        'areas' => $areas,
+        'subjects' => $subjects,
+    ]);
+    }
+
 
 
     // プロフィールをアップデート内容を取得する

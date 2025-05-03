@@ -88,7 +88,7 @@
               @endforeach
 
               <div class="post-item">
-              <a href="{{ route('profile', ['user_id' => $user->id]) }}" class="ui button" enctype="multipart/form-data">
+              <a href="{{ route('profiles', ['user_id' => $user->id]) }}" class="ui button" enctype="multipart/form-data">
                 <p>詳細</p>
               </a>
               </div>
