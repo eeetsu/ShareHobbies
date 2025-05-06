@@ -19,33 +19,35 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet">
     </head>
-  <>
-    <header>
-      <!-- ヘッダーエリアの要素が入ります -->
-    </header>
-    <!-- コンセプトエリアの要素が入ります -->
-      <div id="container">
-        <form method="POST" action="/login" accept-charset="UTF-8">
-          @csrf
-          <div class="logout-form">
-            <p class="">Share Hobbies Login</p>
-            <div class="">
-              <p class="p-title">Share Hobbiesへようこそ</p>
+    <body>
+      <header>
+        <!-- ヘッダーエリアの要素が入ります -->
+      </header>
+      <!-- コンセプトエリアの要素が入ります -->
+        <div id="container">
+          <form method="POST" action="/login" accept-charset="UTF-8">
+            @csrf
+            <div class="logout-form">
+              <p class="">Share Hobbies Login</p>
+              <div class="">
+                <p class="p-title">Share Hobbiesへようこそ</p>
 
-              <p class="">mail adress</p>
-              <input class="ui input" name="mail_address" type="text">
+                <p class="">mail adress</p>
+                <input class="ui input" name="mail_address" type="text">
 
-              <p class="">passwod</p>
-              <input class="ui input" name="password" type="password">
+                <p class="">passwod</p>
+                <input class="ui input" name="password" type="password">
 
-              <div class="btn">
-                <button type="submit" class="ui button">ログイン</button>
+                <div class="btn">
+                  <button type="submit" class="ui button">ログイン</button>
+                </div>
+                <div class="btn">
+                  <a href="{{ route('registerView') }}" class="ui button">新規登録</a>
+                </div>
               </div>
-
             </div>
-          </div>
-        </form>
-      </div>
-  </body>
+          </form>
+        </div>
+    </body>
 
 </html>

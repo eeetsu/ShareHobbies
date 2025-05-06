@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
 
 /*
@@ -28,6 +29,8 @@ Route::middleware(['guest'])->group(function () {
     Route::get('/profile/{user_id}', [UsersController::class, 'profile'])->name('profile');
     Route::get('/login',[LoginController::class, 'login'])->name('login');
     Route::post('/login',[LoginController::class, 'login']);
+    Route::get('/register', [RegisterController::class, 'registerView'])->name('registerView');
+    Route::post('/register/post', [RegisterController::class, 'registerPost'])->name('registerPost');
 });
 
 

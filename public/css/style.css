@@ -196,6 +196,10 @@ select::-ms-expand {
   opacity:透過度
 }
  */
+/* js */
+ .d-none {
+   display: none !important;
+ }
 
 /* メインビジュアル */
 #main-visual {

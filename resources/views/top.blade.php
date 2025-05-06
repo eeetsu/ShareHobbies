@@ -26,7 +26,7 @@
             <nav class="g-navi">
                 <form action="{{ route('top') }}" method="get" id="userSearchRequest">
                   <ul>
-                    <li><a href="{{ route('login') }}" class="ui button">ログイン</a></li>
+                    <li><a href="{{ route('login') }}" class="ui button">ログイン/新規登録</a></li>
                     <li><input type="text" class="ui inverted input" name="keyword" placeholder="キーワードを検索" form="userSearchRequest"></li>
 
                     <li>
@@ -70,27 +70,29 @@
       <div class="container">
         @if($users->count())
           @foreach ($users as $user)
-            <div class="user">
-              <img src="{{ asset('storage/images/' . $user->images) }}" alt="" width="100" height="100" style="border-radius: 10%">
-              <p>ユーザー名：{{ $user->username }}</p>
-              @foreach ($user->subjects as $subject)
-              <p>カテゴリ：{{ $subject->subject }}</p>
-              @endforeach
+            @if ($user->role == 1) {{-- 主催ユーザーのみ表示 --}}
+              <div class="user">
+                <img src="{{ asset('storage/images/' . $user->images) }}" alt="" width="100" height="100" style="border-radius: 10%">
+                <p>ユーザー名：{{ $user->username }}</p>
+                @foreach ($user->subjects as $subject)
+                <p>カテゴリ：{{ $subject->subject }}</p>
+                @endforeach
 
-              <p>エリア：{{ $user->areadetail }}</p>
-              <p>自己紹介文：{{ $user->bio }}</p>
+                <p>エリア：{{ $user->areadetail }}</p>
+                <p>自己紹介文：{{ $user->bio }}</p>
 
 
-              @foreach ($user->posts as $post)
-              <p>コメント：{{ $post->post }}</p>
-              @endforeach
+                @foreach ($user->posts as $post)
+                <p>コメント：{{ $post->post }}</p>
+                @endforeach
 
-              <div class="post-item">
-              <a href="{{ route('profile', ['user_id' => $user->id]) }}" class="ui button" enctype="multipart/form-data">
-                <p>詳細</p>
-              </a>
+                <div class="post-item">
+                <a href="{{ route('profile', ['user_id' => $user->id]) }}" class="ui button" enctype="multipart/form-data">
+                  <p>詳細</p>
+                </a>
+                </div>
               </div>
-            </div>
+            @endif
           @endforeach
 
           @else
