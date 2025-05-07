@@ -50,13 +50,6 @@ class PostsController extends Controller
         return view('top', compact('posts','users','areas'));
     }
 
-    public function login_profile(Request $request)
-    {
-        $users = User::latest()->get();
-        $posts = Post::latest()->get();
-        $subjects = Subject::latest()->get();
-        return view('login_profile', compact('users','posts','subjects'));
-    }
 
     public function login_top(Request $request)
     {

@@ -21,6 +21,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Route::get('/login_profile', [UsersController::class, 'profile'])->middleware('auth')->name('profile');
+
 
 // ログアウト中のページ_誰でもアクセス可能なページ
 Route::middleware(['guest'])->group(function () {
@@ -36,7 +38,7 @@ Route::middleware(['guest'])->group(function () {
 
 // ログイン中のページ
 Route::middleware(['auth'])->group(function () {
-    Route::get('/login_profile', [PostsController::class, 'login_profile'])->name('login_profile');// ログイン中の自分のプロフィールを見る
+    Route::get('/login_profile', [UsersController::class, 'login_profile'])->name('login_profile');// ログイン中の自分のプロフィールを見る
     Route::get('/login_top', [PostsController::class, 'login_top'])->name('login_top');
     Route::get('/profiles', [UsersController::class, 'profiles'])->name('profiles');// ログイン中の他ユーザーのプロフィールを見る
     Route::get('/profiles/{user_id}', [UsersController::class, 'profiles'])->name('profiles');// ログイン中の他ユーザーのプロフィールを見る

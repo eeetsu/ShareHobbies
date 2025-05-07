@@ -32,10 +32,10 @@
               <div class="">
                 <p class="p-title">Share Hobbiesへようこそ</p>
 
-                <p class="">mail adress</p>
+                <p class="">mail_address</p>
                 <input class="ui input" name="mail_address" type="text">
 
-                <p class="">passwod</p>
+                <p class="">password</p>
                 <input class="ui input" name="password" type="password">
 
                 <div class="btn">

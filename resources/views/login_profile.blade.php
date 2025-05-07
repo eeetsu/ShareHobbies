@@ -32,7 +32,7 @@
           </form>
       </nav>
     <!-- ヘッダーエリアの要素が入ります -->
-    <section id="profile-main-visual" style="background-image: url({{ asset('storage/images/' . $users->first()->images) }})">
+    <section id="profile-main-visual" style="background-image: url({{ asset('storage/images/' . $user->images) }})" class="select_admin_user d-none">
       <!-- メインビジュアルの要素が入ります -->
       <div class="container mv-wrapper"></div>
     </section>
@@ -40,13 +40,13 @@
   <section id="concept">
     <div class="container">
       <div class="user">
-            <img src="{{ asset('storage/images/' . $users->first()->images) }}" alt="" width="100" height="100" style="border-radius: 10%">
-            <p>ユーザー名：{{ $users->first()->username }}</p>
+            <img src="{{ asset('storage/images/' . $user->images) }}" alt="" width="100" height="100" style="border-radius: 10%">
+            <p>ユーザー名：{{ $user->username }}</p>
 
-            <p>カテゴリ：{{ $subjects->first()->subject }}</p>
+            <p>カテゴリ：{{ $user->subject }}</p>
 
-            <p>エリア詳細：{{ $users->first()->areadetail }}</p>
-            <p>自己紹介文：{{ $users->first()->bio }}</p>
+            <p>エリア詳細：{{ $user->areadetail }}</p>
+            <p>自己紹介文：{{ $user->bio }}</p>
 
             <p>コメント：</P>
             @foreach($posts as $post)

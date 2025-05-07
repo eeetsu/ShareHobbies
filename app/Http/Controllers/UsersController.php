@@ -45,6 +45,22 @@ class UsersController extends Controller
     }
 
 
+    public function login_profile()
+    {
+        $user = Auth::user(); // ログイン中のユーザーを取得
+        $posts = $user->posts;
+        $areas = $user->areas;
+        $subjects = $user->subjects;
+
+    return view('login_profile', [
+        'user' => $user, // 単数に変更
+        'posts' => $posts,
+        'areas' => $areas,
+        'subjects' => $subjects,
+    ]);
+    }
+
+
 
     // プロフィールをアップデート内容を取得する
     public function updateProfile(Request $request)
